@@ -14,7 +14,16 @@ const ForgotPassword = () => {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
 
-  const handleSubmit = async (e) => {
+  interface ForgotFormEvent extends React.FormEvent<HTMLFormElement> {}
+  interface ApiError {
+    response?: {
+      data?: {
+        detail?: string;
+      };
+    };
+  }
+
+  const handleSubmit = async (e: ForgotFormEvent): Promise<void> => {
     e.preventDefault();
     setLoading(true);
 
@@ -22,8 +31,9 @@ const ForgotPassword = () => {
       await forgotPassword(email);
       setSubmitted(true);
       toast.success('Password reset instructions sent!');
-    } catch (error) {
-      toast.error(error.response?.data?.detail || 'Failed to send reset link');
+    } catch (error: unknown) {
+      const apiError = error as ApiError;
+      toast.error(apiError.response?.data?.detail || 'Failed to send reset link');
     } finally {
       setLoading(false);
     }

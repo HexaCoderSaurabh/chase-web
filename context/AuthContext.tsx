@@ -1,17 +1,21 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const AuthContext = createContext(null);
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-type AuthContextType = {
+interface AuthContextType {
   user: any | null;
   token: string | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<any>;
-};
+  signup: (name: string, email: string, password: string) => Promise<any>;
+  logout: () => void;
+  forgotPassword: (email: string) => Promise<any>;
+}
+
+
+const AuthContext = createContext<AuthContextType | null>(null);
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 export const useAuth = () => {
   const context = useContext(AuthContext);

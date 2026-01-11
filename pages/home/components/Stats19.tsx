@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export function Stats19() {
+export default function Stats19() {
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">

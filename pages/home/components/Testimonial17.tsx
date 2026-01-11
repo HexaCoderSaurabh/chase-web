@@ -3,7 +3,7 @@
 import React from "react";
 import { BiSolidStar } from "react-icons/bi";
 
-export function Testimonial17() {
+export default function Testimonial17() {
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">

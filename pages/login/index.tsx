@@ -17,22 +17,27 @@ const Login = () => {
     password: ''
   });
 
-  const handleSubmit = async (e) => {
+  interface LoginFormData {
+    email: string;
+    password: string;
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      await login(formData.email, formData.password);
+      await login((formData as LoginFormData).email, (formData as LoginFormData).password);
       toast.success('Welcome back!');
       router.push('/dashboard');
-    } catch (error) {
-      toast.error(error.response?.data?.detail || 'Login failed');
+    } catch (error: any) {
+      toast.error(error?.response?.data?.detail || 'Login failed');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 

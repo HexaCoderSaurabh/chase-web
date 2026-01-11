@@ -10,7 +10,7 @@ const slideUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-export function Strength() {
+export default function Strength() {
   return (
     <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">

@@ -43,9 +43,39 @@ export default function EditMembershipDialogue({
     onOpenChange(false);
   };
 
-  const editingMember = true;
+  type Member = {
+    name: string;
+    phone: string;
+    membershipType: "Basic" | "Standard" | "Premium";
+    subscriptionStart: string;
+    subscriptionEnd: string;
+    amountPaid: number;
+    ptAmountPaid: number;
+    ptAmountDue: number;
+    isActive: boolean;
+  };
 
-  const handleUpdateMember = () => {};
+  const [editingMember, setEditingMember] = React.useState<Member>({
+    name: "",
+    phone: "",
+    membershipType: "Basic",
+    subscriptionStart: "",
+    subscriptionEnd: "",
+    amountPaid: 0,
+    ptAmountPaid: 0,
+    ptAmountDue: 0,
+    isActive: true,
+  });
+
+  const handleInputChange = <K extends keyof Member>(key: K, value: Member[K]) => {
+    setEditingMember((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleUpdateMember = () => {
+    // implement update logic (API call / state lift-up) as needed
+    console.log("Updated member", editingMember);
+    onOpenChange(false);
+  };
 
   return (
     <React.Fragment>
@@ -112,7 +142,7 @@ export default function EditMembershipDialogue({
                   data-testid="modal-membership-type-select"
                   value={editingMember.membershipType}
                   onChange={(e) =>
-                    handleInputChange("membershipType", e.target.value)
+                    handleInputChange("membershipType", e.target.value as Member["membershipType"])
                   }
                 >
                   <MenuItem value="Basic">Basic</MenuItem>

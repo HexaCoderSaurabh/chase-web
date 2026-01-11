@@ -9,7 +9,7 @@ import {
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 
-export function Footer3() {
+export default function Footer3() {
   return (
     <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20">
       <div className="container">
