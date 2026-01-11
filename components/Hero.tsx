@@ -3,7 +3,7 @@
 import { Button } from "@relume_io/relume-ui";
 import { motion } from "framer-motion";
 import React from "react";
-import { slideFromLeft, slideFromRight } from "../../../constants";
+import { slideFromLeft, slideFromRight } from "../constants";
 export default function Hero() {
   return (
     <section id="relume" className="px-[5%] py-12 md:py-16 lg:py-20">

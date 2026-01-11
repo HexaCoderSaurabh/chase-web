@@ -1,10 +1,10 @@
 import React from "react";
-import Hero from "./components/Hero";
-import Strength from "./components/Strength";
-import Stats19 from "./components/Stats19";
-import Testimonial17 from "./components/Testimonial17";
-import Cta31 from "./components/Cta31";
-import Footer3 from "./components/Footer3";
+import Hero from "@/components/Hero";
+import Strength from "@/components/Strength";
+import Stats19 from "@/components/Stats19";
+import Testimonial17 from "@/components/Testimonial17";
+import Cta31 from "@/components/Cta31";
+import Footer3 from "@/components/Footer3";
 
 export default function Page() {
   return (
