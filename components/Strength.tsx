@@ -60,7 +60,7 @@ export default function Strength() {
                 <div className="flex w-full flex-col items-center justify-center self-start">
                   <img
                     src={item.img}
-                    alt={`Relume placeholder image ${idx + 1}`}
+                    alt={`Chase placeholder image ${idx + 1}`}
                   />
                 </div>
                 <div className="flex flex-1 flex-col justify-center p-6 md:p-8">

@@ -18,7 +18,7 @@ export default function Stats19() {
             <img
               className="aspect-[3/2] size-full object-cover"
               src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
-              alt="Relume placeholder image"
+              alt="Chase placeholder image"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8 md:gap-y-12 md:p-8 lg:grid-cols-1 lg:gap-x-0 lg:p-12">
